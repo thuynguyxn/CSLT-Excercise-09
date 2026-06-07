@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai12
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai5.txt";
+            int soDongCanDoc = 2; // Vi du doc dong so 2
+
+            if (File.Exists(duongDan))
+            {
+                // Bo qua (soDong - 1) dong dau va lay dong tiep theo
+                string dongCanTim = File.ReadLines(duongDan).Skip(soDongCanDoc - 1).FirstOrDefault();
+
+                Console.WriteLine($"Dong so {soDongCanDoc} la: {dongCanTim}");
+            }
+        }
+    }
+}
