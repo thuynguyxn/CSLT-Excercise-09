@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai5.txt"; // Dung lai file cua bai 5
+            string chuoiThem = "\nDay la dong duoc append (ghi them) vao.";
+
+            // AppendAllText se ghi noi dung moi vao cuoi file chu khong xoa noi dung cu
+            File.AppendAllText(duongDan, chuoiThem);
+
+            Console.WriteLine("Da append chu vao file thanh cong!");
+        }
+    }
+}
