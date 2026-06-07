@@ -1,0 +1,24 @@
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "file_rong.txt";
+
+            // File.Create tạo file và trả về một FileStream. 
+            // Dùng 'using' để đóng file ngay sau khi tạo xong, tránh bị lỗi khóa file.
+            using (File.Create(duongDan)) { }
+
+            Console.WriteLine("Da tao file rong thanh cong!");
+        }
+    }
+}
