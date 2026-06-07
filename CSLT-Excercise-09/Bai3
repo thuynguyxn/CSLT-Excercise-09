@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai3.txt";
+            string noiDung = "Xin chao!\nDay la van ban duoc ghi vao file.";
+
+            // WriteAllText sẽ tự động tạo file mới (hoặc ghi đè nếu file đã có)
+            File.WriteAllText(duongDan, noiDung);
+
+            Console.WriteLine("Da tao file va ghi chu thanh cong!");
+        }
+    }
+}
