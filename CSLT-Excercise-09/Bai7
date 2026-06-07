@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string fileGoc = "file_goc.txt";
+            string fileCopy = "file_copy.txt";
+
+            // Chuan bi file goc
+            File.WriteAllText(fileGoc, "Noi dung cua file goc.");
+
+            // Copy file (tham so true cho phep ghi de neu file_copy da ton tai)
+            File.Copy(fileGoc, fileCopy, true);
+            Console.WriteLine($"Da copy tu {fileGoc} sang {fileCopy}");
+
+            // Doc va hien thi noi dung file moi
+            string noiDungCopy = File.ReadAllText(fileCopy);
+            Console.WriteLine($"Noi dung file copy: {noiDungCopy}");
+        }
+    }
+}
