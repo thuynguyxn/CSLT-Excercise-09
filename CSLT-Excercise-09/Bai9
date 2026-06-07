@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai5.txt";
+
+            if (File.Exists(duongDan))
+            {
+                // ReadLines doc theo kieu streaming (tung dong mot), tiet kiem bo nho
+                string dongDau = File.ReadLines(duongDan).FirstOrDefault();
+                Console.WriteLine($"Dong dau tien: {dongDau}");
+            }
+    }
+}
