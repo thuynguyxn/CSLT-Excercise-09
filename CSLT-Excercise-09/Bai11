@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai5.txt";
+            int n = 2; // Vi du can doc 2 dong cuoi cung
+
+            if (File.Exists(duongDan))
+            {
+                // TakeLast(n) se lay n phan tu cuoi cung cua tap hop
+                var nDongCuoi = File.ReadLines(duongDan).TakeLast(n);
+
+                Console.WriteLine($"{n} dong cuoi cung cua file la:");
+                foreach (var dong in nDongCuoi)
+                {
+                    Console.WriteLine(dong);
+                }
+            }
+        }
+    }
+}
