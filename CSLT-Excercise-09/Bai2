@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "file_rong.txt";
+
+            // Kiểm tra xem file có tồn tại hay không trước khi xóa để tránh crash chương trình
+            if (File.Exists(duongDan))
+            {
+                File.Delete(duongDan);
+                Console.WriteLine("Da xoa file thanh cong!");
+            }
+            else
+            {
+                Console.WriteLine("File khong ton tai de xoa.");
+            }
+        }
+    }
+}
