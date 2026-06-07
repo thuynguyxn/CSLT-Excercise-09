@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string duongDan = "bai4.txt";
+
+            // 1. Tạo và ghi file
+            File.WriteAllText(duongDan, "Noi dung doc tu file kiem tra.");
+
+            // 2. Đọc file
+            if (File.Exists(duongDan))
+            {
+                string noiDungDocDuoc = File.ReadAllText(duongDan);
+                Console.WriteLine("Noi dung file la:");
+                Console.WriteLine(noiDungDocDuoc);
+            }
+        }
+    }
+}
