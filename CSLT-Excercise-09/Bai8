@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bai8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string tenCu = "file_truoc_khi_di_chuyen.txt";
+            string tenMoi = "file_sau_khi_di_chuyen.txt";
+
+            File.WriteAllText(tenCu, "File de test di chuyen.");
+
+            // Xóa file cũ nếu đã tồn tại để tránh lỗi trùng tên khi Move
+            if (File.Exists(tenMoi)) File.Delete(tenMoi);
+
+            // Move vua co tac dung doi ten, vua co tac dung chuyen thu muc
+            File.Move(tenCu, tenMoi);
+
+            Console.WriteLine($"Da di chuyen/doi ten file tu '{tenCu}' thanh '{tenMoi}'");
+        }
+    }
+}
